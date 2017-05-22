@@ -310,6 +310,12 @@
             : Math.round(_win.height());
     }
 
+    function winWidth() {
+        return document.documentElement.clientWidth
+            ? document.documentElement.clientWidth
+            : Math.round(_win.width());
+    }
+
     function keydown(e) {
         var current = currentInstance();
 
@@ -508,6 +514,7 @@
 
             content
                 .css('max-height', winHeight() + 'px')
+                .css('max-width', winWidth() + 'px')
                 .trigger('lity:resize', [self])
             ;
         };
